@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 6.25%;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  background: #042104;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animatebgcolor 10s linear infinite;
+}
+
+.loader {
+  position: relative;
+
+}
+
+@keyframes animatebgcolor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(90deg);
+  }
+}
+
+.loader span {
+  position: absolute;
+  left: -150rem;
+  width: 150rem;
+  transform-origin: right;
+  transform: rotate(calc(18deg * var(--size)));
+}
+
+.loader span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  background: #3EFF00;
+  box-shadow: 0 0 10rem #3EFF00,
+    0 0 20rem #3EFF00,
+    0 0 40rem #3EFF00,
+    0 0 60rem #3EFF00,
+    0 0 80rem #3EFF00,
+    0 0 0rem #3EFF00;
+  animation: animate 2s linear infinite;
+  animation-delay: calc(-0.1s * var(--size));
+  transform-origin: right;
+  #3EFF00 transform: rotate(clac(18deg * var(--size)));
+
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0rem) scale(0.5);
+  }
+
+  50% {
+    transform: translateX(150rem) scale(1);
+  }
+
+  100% {
+    transform: translateX(0rem) scale(0.5);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 13.5%;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1280px) {
+  html {
+    font-size: 15%;
+  }
+}
+
+@media (min-width: 1281px) {
+  html {
+    font-size: 19.4326456311%;
+  }
+}
